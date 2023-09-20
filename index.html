@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <title>永恒之途</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="main.js"></script>
+        <script type="text/javascript" src="level.js"></script>
+    </head>
+    <body>
+        <div>
+            <canvas id="canvas1" width="768" height="768" style="position: absolute;left: 8px;"></canvas>
+            <canvas id="canvas4" width="768" height="768" style="position: absolute;left: 8px;"></canvas>
+            <canvas id="canvas2" width="768" height="768" style="position: absolute;left: 8px;"></canvas>
+            <canvas id="canvas3" width="256" height="768" style="position: absolute;left: 776px;"></canvas>
+            <div id="button10000">
+                <div id="button10010">
+                    <div style="position: absolute;top: 445px;left: 50px;font-size: 18.5px;text-shadow: #9900ff 1px 1px 1.5px;">挑战关卡</div>
+                    <div class="button1" id="button10011" style="position: absolute;top: 480px;left: 50px;color: #45e600;" onclick="enterLevel(10011)">1E<br><span id="maxScore10011" style="color: #9900ff;">0</span></div>
+                    <div class="button1" id="button10012" style="position: absolute;top: 480px;left: 120px;color: #00c3e6;" onclick="enterLevel(10012)">1N<br><span id="maxScore10012" style="color: #9900ff;">0</span></div>
+                    <div class="button1" id="button10013" style="position: absolute;top: 480px;left: 190px;color: #e67a00;" onclick="enterLevel(10013)">1H<br><span id="maxScore10013" style="color: #9900ff;">0</span></div>
+                    <div class="button1" id="button10014" style="position: absolute;top: 480px;left: 260px;color: #e60000;" onclick="enterLevel(10014)">1L<br><span id="maxScore10014" style="color: #9900ff;">0</span></div>
+                </div>
+                <div id="button10020">
+                    <div class="button1" id="button10021" style="position: absolute;top: 550px;left: 50px;color: #3dcc00;" onclick="enterLevel(10021)">2E<br><span id="maxScore10021" style="color: #9900ff;">0</span></div>
+                    <div class="button1" id="button10022" style="position: absolute;top: 550px;left: 120px;color: #00adcc;" onclick="enterLevel(10022)">2N<br><span id="maxScore10022" style="color: #9900ff;">0</span></div>
+                    <div class="button1" id="button10023" style="position: absolute;top: 550px;left: 190px;color: #cc6d00;" onclick="enterLevel(10023)">2H<br><span id="maxScore10023" style="color: #9900ff;">0</span></div>
+                    <div class="button1" id="button10024" style="position: absolute;top: 550px;left: 260px;color: #cc0000;" onclick="enterLevel(10024)">2L<br><span id="maxScore10024" style="color: #9900ff;">0</span></div>
+                </div>
+            </div>
+            <div id="button20000">
+                <div id="button20010">
+                    <div style="position: absolute;top: 35px;left: 50px;font-size: 18.5px;text-shadow: #0073ff 1px 1px 1.5px;">主线关卡</div>
+                    <div class="button1" id="button20011" style="position: absolute;top: 70px;left: 50px;" onclick="enterLevel(20011)">1-1<br><span style="color: #0073ff;"><span id="maxScore20011">0</span>%</span></div>
+                    <div class="button1" id="button20012" style="position: absolute;top: 70px;left: 120px;" onclick="enterLevel(20012)">1-2<br><span style="color: #0073ff;"><span id="maxScore20012">0</span>%</span></div>
+                    <div class="button1" id="button20013" style="position: absolute;top: 70px;left: 190px;" onclick="enterLevel(20013)">1-3<br><span style="color: #0073ff;"><span id="maxScore20013">0</span>%</span></div>
+                    <div class="button1" id="button20014" style="position: absolute;top: 70px;left: 260px;" onclick="enterLevel(20014)">1-4<br><span style="color: #0073ff;"><span id="maxScore20014">0</span>%</span></div>
+                    <div class="button1" id="button20015" style="position: absolute;top: 70px;left: 330px;" onclick="enterLevel(20015)">1-5<br><span style="color: #0073ff;"><span id="maxScore20015">0</span>%</span></div>
+                </div>
+                <div id="button20020">
+                    <div class="button1" id="button20021" style="position: absolute;top: 140px;left: 50px;" onclick="enterLevel(20021)">2-1<br><span style="color: #0073ff;"><span id="maxScore20021">0</span>%</span></div>
+                    <div class="button1" id="button20022" style="position: absolute;top: 140px;left: 120px;" onclick="enterLevel(20022)">2-2<br><span style="color: #0073ff;"><span id="maxScore20022">0</span>%</span></div>
+                    <div class="button1" id="button20023" style="position: absolute;top: 140px;left: 190px;" onclick="enterLevel(20023)">2-3<br><span style="color: #0073ff;"><span id="maxScore20023">0</span>%</span></div>
+                    <div class="button1" id="button20024" style="position: absolute;top: 140px;left: 260px;" onclick="enterLevel(20024)">2-4<br><span style="color: #0073ff;"><span id="maxScore20024">0</span>%</span></div>
+                    <div class="button1" id="button20025" style="position: absolute;top: 140px;left: 330px;" onclick="enterLevel(20025)">2-5<br><span style="color: #0073ff;"><span id="maxScore20025">0</span>%</span></div>
+                </div>
+            </div>
+            <div id="info1" style="position: absolute;left: 796px;line-height: 30px;margin-top: 15px;font-size: 17px;display: none;">
+                <span style="font-weight: bold;">关卡 <span id="level">挑战1N</span></span><br>
+                <span id="info1_2">分数</span> <span id="score"></span> / <span id="maxScore" style="color: #9900ff;"></span><br>
+                生命 <span id="life" style="color: #ff0000;"></span><br>
+                金币 <span id="coin" style="color: #ff8800;"></span><br><br>
+                按数字键切换武器<br>
+                <span id="gun1">
+                    [1] 手枪 
+                    <span id="gun1_3" style="color: #ff8800;">(1金币)</span>
+                    <br>
+                </span>
+                <span id="gun2">
+                    [2] 霰弹枪 
+                    <span id="gun2_1" style="color: #ff0000;">(100分解锁)</span>
+                    <span id="gun2_3" style="color: #ff8800;">(3金币)</span>
+                    <br>
+                </span>
+                <span id="gun3">
+                    [3] 激光枪 
+                    <span id="gun3_1" style="color: #ff0000;">(300分解锁)</span>
+                    <span id="gun3_3" style="color: #ff8800;">(5金币/s)</span>
+                    <br>
+                </span>
+                <span id="gun4">
+                    [4] 冲锋枪 
+                    <span id="gun4_1" style="color: #ff0000;">(400分解锁)</span>
+                    <span id="gun4_3" style="color: #ff8800;">(10金币/s)</span>
+                    <br>
+                </span><br>
+                按字母键使用技能<br>
+                <span id="skill2">
+                    [q] 防御水波 
+                    <span id="skill2_1" style="color: #ff0000;">(500分解锁)</span>
+                    <span id="skill2_2" style="color: #ff0000;">(<span id="skill2_2_1"></span>s)</span>
+                    <span id="skill2_3" style="color: #555555;">(50金币)</span>
+                    <br>
+                </span>
+                <span id="skill1">
+                    [e] 大量资源 
+                    <span id="skill1_3" style="color: #555555;">(仅供测试)</span>
+                    <br>
+                </span>
+                <div style="display: none;">
+                    X:<span id="text1"></span><br>
+                    Y:<span id="text2"></span><br>
+                    dX:<span id="text3"></span><br>
+                    dY:<span id="text4"></span>
+                </div>
+            </div>
+            <div id="info2" style="position: absolute;left: 796px;line-height: 30px;margin-top: 15px;font-size: 17px;display: block;">
+                <span style="width: 230px;display: block;">
+                    <span style="font-weight: bold;">关卡说明</span><br>
+                    <span>[主线关卡] 武器和技能在通过对应<span style="color: #ff0000;">红色关卡</span>后解锁</span><br><br>
+                    <span>[挑战关卡] 武器和技能固定，在关卡内达到<span style="color: #9900ff;">对应分数</span>后解锁</span><br><br>
+                    <span style="font-weight: bold;">操作说明</span><br>
+                    <span>[单击左键] 单次攻击<br>(仅限<span style="color: #ff8800;">非自动武器</span>)</span><br>
+                    <span>[长按左键] 持续攻击<br>(仅限<span style="color: #ff8800;">自动武器</span>)</span><br>
+                    <span>[w/a/s/d] 移动</span><br>
+                    <span>[1/2/3/4] 切换武器</span><br>
+                    <span>[q/e] 使用技能</span><br>
+                    <span>[esc] 退出关卡</span><br>
+                </span>
+            </div>
+            <div id="debugText" style="position: absolute;top: 20px;left: 720px;font-size: 14px;color: #ff0000;">debug</div>
+            <div style="position: absolute;top: 730px;left: 800px;font-size: 18px;">永恒之途 v0.1.4&nbsp;&nbsp;<span style="color: #eb4f00;font-weight: bold;">by 静火Ω</span></div>
+        </div>
+    </body>
+    <script>
+        draw0();
+        key();
+        show();
+    </script>
+</html>
